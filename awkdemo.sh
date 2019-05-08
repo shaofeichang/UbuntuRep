@@ -24,4 +24,6 @@ awk '{print $1,$2,$5}' OFS=" $ " log.txt
 echo "brbr"
 awk '$2 ~ /th/ {print $2,$4}' log.txt
 
+awk '/re/' log.txt
 
+awk 'BEGIN{IGNORECAS=1} /this/' log.txt
