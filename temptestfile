@@ -1,6 +1,0 @@
-HELLO LINUX!
-Linux is a Free unix-type opterating system.
-This is a Linux testfile!
-Linux test
-newline
-sed -e 4a\new line testfile
