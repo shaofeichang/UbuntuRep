@@ -2,7 +2,8 @@
 #include<string.h>
 //#include"head.h"
 using namespace std;
-extern void printHello();
+// extern 
+void printHello();
 int main()
 {
     printHello();
