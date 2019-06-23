@@ -1,6 +1,6 @@
-#include "gtest/gtest.h"
+#include "gtest//gtest.h"
 #include "func.h"
-//È«¾ÖÊÂ¼þ
+//È«ï¿½ï¿½ï¿½Â¼ï¿½
 class FooEnvironment :public testing::Environment
 {
 public:
@@ -13,7 +13,7 @@ public:
 		std::cout << "Fool FooEnvironment TearDown " << std::endl;
 	}
 };
-//TestSuiteÊÂ¼þ
+//TestSuiteï¿½Â¼ï¿½
 class SetUpTestCaseTest : public testing::Test {
 protected:
 	// This will be called once before the first test in this test case
@@ -73,7 +73,7 @@ TEST_F(SetUpTestCaseTest, Test2) {
 	EXPECT_STREQ("123", shared_resource_);
 }
 
-//TestCaseÊÂ¼þ
+//TestCaseï¿½Â¼ï¿½
 class FooCalcTest :public testing::Test {
 protected:
 	virtual void SetUp() {
@@ -102,17 +102,17 @@ TEST(TestCase1, TestName1) {
 	EXPECT_EQ(3, add(1, 2));
 }
 TEST(TestCase2, TestName2) {
-	//²¼¶û¼ì²é
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	ASSERT_TRUE(1);			EXPECT_TRUE(1);
 	ASSERT_FALSE(0);		EXPECT_FALSE(0);
-	//ÊýÖµÐÍÊý¾Ý¼ì²é
+	//ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½
 	ASSERT_EQ(1, 1);		EXPECT_EQ(1, 1);
 	ASSERT_NE(1, 2);		EXPECT_NE(1, 0);
 	ASSERT_LE(1, 1);		EXPECT_LE(1, 1);
 	ASSERT_LT(-1, 0);		EXPECT_LT(1, 2);
 	ASSERT_GT(2, 1);		EXPECT_GT(2, 1);
 	ASSERT_GE(2, 2);		EXPECT_GE(3, 1);
-	//×Ö·û´®¼ì²é
+	//ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	ASSERT_STREQ("STR1", "STR1"); EXPECT_STREQ("STR1", "STR1");
 	ASSERT_STRNE("STR1", "STR2"); EXPECT_STRNE("STR1", "STR2");
 	ASSERT_STRCASEEQ("STR1", "STR1"); EXPECT_STRCASEEQ("STR1", "str1"); //the two string have the same content ,ignoring case

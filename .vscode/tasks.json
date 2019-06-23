@@ -2,7 +2,9 @@
     "version": "2.0.0",
     "command": "g++",
     //"args": ["-g","${file}","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数
-   "args": ["-g","${workspaceRoot}\\shelldir\\*.cpp","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数 
+   //"args": ["-g","${workspaceRoot}\\shelldir\\*.cpp","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数 
+   //"args": ["-g","${workspaceRoot}\\GTestDemo\\封装输出颜色\\*.cpp","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数 
+   "args": ["-g","${workspaceRoot}\\GTestDemo\\Demo1\\*.cpp","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数 
    "problemMatcher": {
         "owner": "cpp",
         "fileLocation": ["relative", "${workspaceRoot}"],
