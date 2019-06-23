@@ -1,4 +1,4 @@
-#include "gtest//gtest.h"
+#include "gtest\gtest.h"
 #include "func.h"
 //ȫ���¼�
 class FooEnvironment :public testing::Environment
