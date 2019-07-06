@@ -1,6 +1,0 @@
-add env
-<<<<<<< HEAD
-hello
-=======
-hi
->>>>>>> a5bdd16896fe5b29300947f1ea51afd5dafb861b
