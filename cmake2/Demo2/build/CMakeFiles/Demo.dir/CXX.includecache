@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csf/git/cmake2/Demo2/MathFunctions.cc
+
+/home/csf/git/cmake2/Demo2/MathFunctions.h
+
+/home/csf/git/cmake2/Demo2/main.cc
+stdio.h
+-
+stdlib.h
+-
+MathFunctions.h
+/home/csf/git/cmake2/Demo2/MathFunctions.h
+
