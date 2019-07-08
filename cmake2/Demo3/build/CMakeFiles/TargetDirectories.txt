@@ -1,2 +1,0 @@
-/home/csf/git/cmake2/Demo3/build/CMakeFiles/Demo.dir
-/home/csf/git/cmake2/Demo3/build/math/CMakeFiles/MathFunctions.dir
