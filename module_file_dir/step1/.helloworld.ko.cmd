@@ -1,0 +1,1 @@
+cmd_/home/csf/git/module_file_dir/step1/helloworld.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/csf/git/module_file_dir/step1/helloworld.ko /home/csf/git/module_file_dir/step1/helloworld.o /home/csf/git/module_file_dir/step1/helloworld.mod.o
