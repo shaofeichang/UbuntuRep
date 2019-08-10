@@ -96,15 +96,15 @@ Linux内核的编译要经过以下步骤，具体如下：
 
 4. **内核模块打包：** 执行mkinitrd initrd-$version $version对内核模块进行打包，其中initrd-$version表示要打包为的文件的名字，$version表示要打包的目录即我们上一步生成的目录。
 
-**3.**       **X86**安装
+**3.**       **X86** 安装
 
 Linux内核的安装要经过以下步骤，具体如下：
 
-a)        **拷贝内核：**复制1编译出来的内核映像到启动目录cp arch/$cpu/boot/bzImage（1编译出来的bzimage）/boot/vmlinuz-$version
+a)        **拷贝内核：** 复制1编译出来的内核映像到启动目录cp arch/$cpu/boot/bzImage（1编译出来的bzimage）/boot/vmlinuz-$version
 
-b)        **拷贝内核模块文件：**执行cp initrd-$version（4生成的文件） /boot/ 将4生成的文件拷贝到boot下
+b)        **拷贝内核模块文件：** 执行cp initrd-$version（4生成的文件） /boot/ 将4生成的文件拷贝到boot下
 
-c)        **修改启动配置文件：**修改/etc/grub.conf文件
+c)        **修改启动配置文件：** 修改/etc/grub.conf文件
 
 
 https://www.cnblogs.com/wrjvszq/p/4257164.html
