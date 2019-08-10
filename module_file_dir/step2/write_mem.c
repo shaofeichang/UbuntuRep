@@ -17,6 +17,7 @@ int main(void)
     
     fd = open("/dev/memdev0",O_RDWR);
     write(fd,&test,sizeof(int));
+    printf("fd = %d\n",fd);
     close(fd);
     
     return 0;
