@@ -1,1 +1,0 @@
-cmd_/home/csf/git/module_file_dir/step2/memdev.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/csf/git/module_file_dir/step2/memdev.ko /home/csf/git/module_file_dir/step2/memdev.o /home/csf/git/module_file_dir/step2/memdev.mod.o
