@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "fs.h": "c",
+        "memdev.h": "c"
+    }
+}
