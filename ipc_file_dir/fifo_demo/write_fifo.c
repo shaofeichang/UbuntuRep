@@ -3,22 +3,18 @@
 #include <fcntl.h>  // O_WRONLY
 #include <sys/stat.h>
 #include <time.h> // time
-
 int main()
 {
     int fd;
     int n, i;
     char buf[1024];
     time_t tp;
-
     printf("I am %d process.\n", getpid()); // 说明进程ID
-
     if ((fd = open("fifo1", O_WRONLY)) < 0) // 以写打开一个FIFO
     {
         perror("Open FIFO Failed");
         exit(1);
     }
-
     for (i = 0; i < 10; ++i)
     {
         time(&tp); // 取系统当前时间
@@ -32,7 +28,6 @@ int main()
         }
         sleep(1); // 休眠1秒
     }
-
     close(fd); // 关闭FIFO文件
     return 0;
 }
