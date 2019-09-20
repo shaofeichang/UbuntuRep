@@ -1,5 +1,5 @@
 # mmap设备操作
-``` C++
+``` C
 void *mmap (void *__addr, size_t __len, int __prot,
 		   int __flags, int __fd, __off_t __offset) __THROW;
 ```
@@ -33,3 +33,7 @@ void *mmap (void *__addr, size_t __len, int __prot,
 - 2. 映射
 - 3. 访问
 - 4. 释放
+内核提供了一套函数来允许驱动申请它需要的IO内存，核心函数是:  
+``` C
+struct resource *request_mem_region(unsigned long start, unsigned long len, char *name)
+```  
