@@ -1,4 +1,4 @@
-# Linux内核
+# Linux kernel study
 
 ## 1. Linux体系结构
 
