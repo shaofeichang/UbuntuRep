@@ -33,7 +33,29 @@ void *mmap (void *__addr, size_t __len, int __prot,
 - 2. 映射
 - 3. 访问
 - 4. 释放
+1. 申请IO内存
 内核提供了一套函数来允许驱动申请它需要的IO内存，核心函数是:  
 ``` C
 struct resource *request_mem_region(unsigned long start, unsigned long len, char *name)
 ```  
+申请之后，在使用的IO内存，通过/proc/iomem中列出来
+2. 映射IO内存
+物理地址到虚拟地址的映射，ioremap函数具有此功能：
+```C
+void *ioremap(unsigned long phys_addr, unsigned long size)
+```
+3. 访问IO内存
+```C
+unsigned readb(address)
+unsigned readw(address)
+unsigned readl(address)
+
+unsigned writeb(unsigned value, address)
+unsigned writew(unsigned value, address)
+unsigned writel(unsigned value, address)
+```
+4. 释放IO内存
+```C
+void ionumap(void *addr)
+void release_mem_region(unsigned long start, unsigned long len)
+```
