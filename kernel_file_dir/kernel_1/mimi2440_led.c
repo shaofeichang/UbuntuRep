@@ -65,7 +65,7 @@ static struct file_operations dev_fops = {
 };
 
 static struct miscdevice misc = {
-	.minor = MISC_DYNAMIC_MINOR, //�Զ�������豸��
+	.minor = MISC_DYNAMIC_MINOR, 
 	.name = DEVICE_NAME,
 	.fops = &dev_fops,
 };

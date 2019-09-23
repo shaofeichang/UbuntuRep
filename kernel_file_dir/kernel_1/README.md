@@ -59,3 +59,22 @@ unsigned writel(unsigned value, address)
 void ionumap(void *addr)
 void release_mem_region(unsigned long start, unsigned long len)
 ```
+  
+# 混杂设备驱动
+一类字符设备：共享一个主设备号（10），但次设备号不同  
+``` C
+	struct miscdevice{
+		int minor;
+		const char *name;
+		...
+	}
+```
+1. 设备注册
+`int misc_register(struct miscdevice *misc);`
+
+
+# LED驱动程序设计
+## 上拉/下拉电阻
+1. 上拉是将不确定的信号通过一个电阻与电源相连，固定在高电平。
+2. 下拉是将不确定的信号通过一个电阻与地相连，固定在低电平。
+
