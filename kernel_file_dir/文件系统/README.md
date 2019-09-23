@@ -10,5 +10,9 @@ int kobject_add(struct kobject* kobj)  //将kobject对象注册到Linux系统
 // 可以合并成一步如下：  
 int kobject_init_and_add(struct kobject* kobj, struct kobj_type* ktype,  
 struct kobject* parent, const char *fmt, ...) //初始化kobject，并将其注册到Linux系统
+
+void kobject_del(struct kobject* kobj)  //从Linux系统中删除kobject对象
+struct kobject* kobject_get(struct kobject* kobj)  //将kobject对象的引用计数加1，同时  返回该对象指针
+void kobject_put(struct kobject* kojb)  //将kobject对象的引用计数减1，如果引用计数将为0  则调用release方法释放kobject对象。
 ```
 
