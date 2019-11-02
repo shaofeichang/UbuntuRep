@@ -6,12 +6,15 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
-
+typedef struct NodeSub
+{
+	int x, y, z, vx, vy, vz;
+} NodeSub;
 typedef struct Node
 {
 	int nodeSize;
-	int bufSize;
-	char buf[0];
+	int nodeSubLen;
+	NodeSub NodeS[0];
 } Node;
 
 int main()
@@ -35,16 +38,16 @@ int main()
 		exit(1);
 	}
 	printf("Client is connecting\n");
-	const char *tmp = "this is a test!";
-	int tmpLen = strlen(tmp);
-	Node *dataBuf = (Node *)malloc(sizeof(Node) + tmpLen + 1);
-	dataBuf->nodeSize = sizeof(Node) + tmpLen + 1;
-	dataBuf->bufSize = tmpLen;
-	memset(dataBuf->buf, 0, tmpLen + 1);
-	memcpy(dataBuf->buf, tmp, tmpLen + 1);
+	int sublen = 3;
+	NodeSub ns[3] = {{1, 2, 3, 4, 5, 6}, {11, 22, 33, 44, 55, 66}, {111, 222, 333, 444, 555, 666}};
+	int SubStrLen = sizeof(NodeSub);
+	Node *dataBuf = (Node *)malloc(sizeof(Node) + sublen * SubStrLen);
+	dataBuf->nodeSize = sizeof(Node) + sublen * SubStrLen;
+	dataBuf->nodeSubLen = sublen;
+	memset(dataBuf->NodeS, 0, sublen * SubStrLen);
+	memcpy(dataBuf->NodeS, ns, sublen * SubStrLen);
 	printf("nodeSize = %d\n", dataBuf->nodeSize);
-	printf("bufSize = %d\n", dataBuf->bufSize);
-	printf("buf = %s\n", dataBuf->buf);
+	printf("bufSize = %d\n", dataBuf->nodeSubLen);
 	if (send(sockfd, (char *)dataBuf, dataBuf->nodeSize, 0) == -1)
 	{
 		printf("send error!\n");

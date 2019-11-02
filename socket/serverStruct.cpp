@@ -8,11 +8,15 @@
 #include <unistd.h>
 //使用不定长的结构体发送数据的关键在于：结构体变量必须分配到堆中，而不是栈中
 //即只能用malloc或者new来给结构体分配空间
+typedef struct NodeSub
+{
+	int x, y, z, vx, vy, vz;
+} NodeSub;
 typedef struct Node
 {
-    int nodeSize;
-    int bufSize;
-    char buf[0]; //用0字节表示该结构体不定长
+	int nodeSize;
+	int nodeSubLen;
+	NodeSub NodeS[0];
 } Node;
 
 int main()
@@ -69,10 +73,14 @@ int main()
         close(new_fd);
         Node *p = (Node *)malloc(sizeof(char) * recvSize);
         p->nodeSize = recvSize;
-        memcpy((char *)(&p->bufSize), dataBuf, leftSize);
+        memcpy((char *)(&p->nodeSubLen), dataBuf, leftSize);
         printf("nodeSize = %d\n", p->nodeSize);
-        printf("bufSize = %d\n", p->bufSize);
-        printf("buf = %s\n", p->buf);
+        printf("bufSize = %d\n", p->nodeSubLen);
+        for (size_t i = 0; i < p->nodeSubLen; i++)
+        {
+            printf("nodesub %d %d %d %d %d %d \n",p->NodeS[i].x,p->NodeS[i].y,p->NodeS[i].z,p->NodeS[i].vx,p->NodeS[i].vy,p->NodeS[i].vz);
+        }
+        
     }
 
     return 0;
