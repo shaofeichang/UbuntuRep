@@ -11,21 +11,21 @@ extern struct bus_type my_bus_type;
 
 static int my_probe(struct device *dev)
 {
-    printk("Driver found device which my driver can handle!\n");
-    return 0;
+	printk("Driver found device which my driver can handle!\n");
+	return 0;
 }
 
 static int my_remove(struct device *dev)
 {
-    printk("Driver found device unpluged!\n");
-    return 0;
+	printk("Driver found device unpluged!\n");
+	return 0;
 }
 
 struct device_driver my_driver = {
 	.name = "my_dev",
 	.bus = &my_bus_type,
 	.probe = my_probe,
-        .remove	= my_remove,
+	.remove = my_remove,
 };
 
 /*
@@ -41,15 +41,14 @@ static DRIVER_ATTR(drv, S_IRUGO, mydriver_show, NULL);
 static int __init my_driver_init(void)
 {
 	int ret = 0;
-        
-        /*×¢²áÇý¶¯*/
-	driver_register(&my_driver);
-		
-	/*´´½¨ÊôÐÔÎÄ¼þ*/
-	driver_create_file(&my_driver, &driver_attr_drv);
-	
-	return ret;	
 
+	/*×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
+	driver_register(&my_driver);
+
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½*/
+	driver_create_file(&my_driver, &driver_attr_drv);
+
+	return ret;
 }
 
 static void my_driver_exit(void)

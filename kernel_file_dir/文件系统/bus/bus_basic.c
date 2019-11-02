@@ -31,12 +31,12 @@ static int __init my_bus_init(void)
 {
 	int ret;
         
-        /*×¢²á×ÜÏß*/
+    /* æ³¨å†Œæ€»çº¿ */
 	ret = bus_register(&my_bus_type);
 	if (ret)
 		return ret;
 		
-	/*´´½¨ÊôÐÔÎÄ¼þ*/	
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½*/	
 	if (bus_create_file(&my_bus_type, &bus_attr_version))
 		printk(KERN_NOTICE "Fail to create version attribute!\n");
 		
