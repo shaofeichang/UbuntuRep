@@ -1,0 +1,5 @@
+find . -rme "*.sh" \) -print
+find . regex ".*\(\.sh\)$"
+find . ! -name "*.txt" -print
+find . -maxdepth 1 -type f
+
