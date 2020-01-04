@@ -19,10 +19,10 @@ echo 命令用于向窗口输出文本。
 
 这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：
 
-    ```shell
-    /bin/sh test.sh
-    /bin/php test.php
-    ```
+```shell
+/bin/sh test.sh
+/bin/php test.php
+```
 
-    这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。
+这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。
 
