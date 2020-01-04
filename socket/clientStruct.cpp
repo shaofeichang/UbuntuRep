@@ -6,6 +6,8 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#pragma pack(push)
+#pragma pack(1)
 typedef struct NodeSub
 {
 	int x, y, z, vx, vy, vz;
@@ -16,7 +18,7 @@ typedef struct Node
 	int nodeSubLen;
 	NodeSub NodeS[0];
 } Node;
-
+#pragma pack(pop)
 int main()
 {
 	int sockfd, new_fd;
@@ -54,5 +56,6 @@ int main()
 		exit(1);
 	}
 	close(sockfd);
+	free(dataBuf);
 	return 0;
 }

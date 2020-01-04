@@ -83,7 +83,7 @@ int main()
             printf("nodesub %d %d %d %d %d %d \n",p->NodeS[i].x,p->NodeS[i].y,p->NodeS[i].z,p->NodeS[i].vx,p->NodeS[i].vy,p->NodeS[i].vz);
         }
         free(p);
-    }8
+    }
 
     return 0;
 }
