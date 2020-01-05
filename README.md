@@ -7,5 +7,5 @@ git基本操作参考：https://git-scm.com/book/zh/v1/
 
 	     git push origin : branchName
 
-查看所以分支：git branch -a
+查看所有分支：git branch -a
 
